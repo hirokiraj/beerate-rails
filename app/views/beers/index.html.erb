@@ -1,0 +1,10 @@
+<h1>List of all beers</h1>
+<ul>
+  <% @beers.each do |beer| %>
+    <li>
+      <%= link_to beer.name, beer_path(beer) %>
+      <%= link_to 'edit', edit_beer_path(beer) %> </br>
+      <%= link_to 'delete', beer_path(beer), method: :delete %> </br>
+    </li>
+  <% end %>
+</ul>

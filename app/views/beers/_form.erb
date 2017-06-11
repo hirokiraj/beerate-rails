@@ -1,0 +1,35 @@
+<% if @beer.errors.any? %>
+  <ul>
+    <% @beer.errors.full_messages.each do |error_message| %>
+      <li>
+        <%= error_message %>
+      </li>
+    <% end %>
+  </ul>
+  <hr />
+<% end %>
+
+<%= form_for @beer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </br>
+  <%= f.label :style %>
+  <%= f.text_field :style %>
+  </br>
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+  </br>
+  <%= f.label :brewery %>
+  <%= f.text_field :brewery %>
+  <hr />
+  <%= f.label :international_bitterness_unit %>
+  <%= f.number_field :international_bitterness_unit %>
+  </br>
+  <%= f.label :alcohol_by_volume %>
+  <%= f.number_field :alcohol_by_volume %>
+  </br>
+  <%= f.label :original_gravity %>
+  <%= f.number_field :original_gravity %>
+  <hr />
+  <%= f.submit %>
+<% end %>

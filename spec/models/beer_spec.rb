@@ -15,4 +15,8 @@ RSpec.describe Beer do
   it 'has proper relations set' do
     should have_many(:reviews)
   end
+
+  it 'has valid factory' do
+    expect(build(:beer)).to be_valid
+  end
 end
