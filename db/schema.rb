@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611170301) do
+ActiveRecord::Schema.define(version: 20170611173327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,4 +25,22 @@ ActiveRecord::Schema.define(version: 20170611170301) do
     t.string "style"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "beer_id"
+    t.text "aroma"
+    t.text "look"
+    t.text "taste"
+    t.text "bitterness"
+    t.text "mouthfeel"
+    t.text "summary"
+    t.integer "aroma_score"
+    t.integer "look_score"
+    t.integer "taste_score"
+    t.integer "bitterness_score"
+    t.integer "mouthfeel_score"
+    t.integer "total_score"
+    t.index ["beer_id"], name: "index_reviews_on_beer_id"
+  end
+
+  add_foreign_key "reviews", "beers"
 end
