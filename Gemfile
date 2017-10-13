@@ -19,7 +19,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'nyan-cat-formatter'
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
