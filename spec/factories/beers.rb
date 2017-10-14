@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :beer do
-    name { Faker::Beer.unique.name }
+    name { Faker::Beer.name }
     brewery { Faker::Company.name }
     country { Faker::Address.country_code }
     style { Faker::Beer.style }
